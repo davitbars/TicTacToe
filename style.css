@@ -1,0 +1,87 @@
+body h1{
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(47, 220, 255);
+}
+
+.container{
+    height: 420px;
+    width: 420px;
+    border: 1px solid black;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+.container .box{
+    border: 2px solid black;
+    text-align: center;
+    font-size: 80px;
+    padding: 20px;
+}
+
+#button{
+    margin-bottom: 15px;
+}
+
+.player-box{
+    display:flex;
+    font-size: 20px;
+    padding: 0;
+}
+
+.player-box h4{
+    margin: 5px 0;
+}
+#player1, #X{
+    color: red;
+    
+}
+
+#player2{
+    color: black;
+}
+#button{
+    width: 100px;
+    border-radius: 5px;
+    background: #373636;
+    color: white;
+    padding: 10px;
+}
+
+.winning-box {
+    background-color: rgba(255, 0, 0); 
+}
+
+#gameMode {
+    padding: 5px;
+    border-radius: 10px;
+    background: #373636;
+    color: white;
+    border: 1px solid white;
+}
+
+@media only screen and (max-width: 850px){
+    .container{
+        max-height: 345px;
+        max-width: 345px;
+    }
+    .container .box{
+        font-size: 60px;
+    }
+    .popup .popuptext {
+        margin-top: 26px;
+    }
+}
+
+
+      

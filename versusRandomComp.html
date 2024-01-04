@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <select id="gameMode" onchange="changePathAndLoadScript()">
+        <option value="versusRandomComp">Player vs Random CPU</option>
+        <option value="versusSmartComp">Player vs Impossible CPU</option>
+        <option value="index">Player vs Player</option>
+    </select>
+
+    <div class="players">
+        <div class="player-box">
+            <h4 id="player1" contenteditable="true">X: Player 1</h4>
+            <h4 style="margin-left: 10px" id="X">: 0</h4>
+        </div>
+        <div class="player-box">
+            <h4 id="player2" contenteditable="true">O: Player 2</h4>
+            <h4 style="margin-left: 10px" id="O">: 0</h4>
+        </div>
+    </div>
+
+    <button type="button" id="button">Reset</button>
+    <div class="popup">
+        <div class="popuptext" id="myPopup">
+            <h4 id="actualtext"></h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div class="box" id="box7"></div>
+        <div class="box" id="box8"></div>
+        <div class="box" id="box9"></div>
+    </div>
+    <style>
+        #actualtext {
+            opacity: 1;
+        }
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 400px;
+            color: #fff;
+            font-size: 25px;
+            font-weight: bolder;
+            text-align: center;
+            border-radius: 6px;
+            padding: 100px 0;
+            position: absolute;
+            z-index: 1;
+            margin-left: -200px;
+            margin-top: 65px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+            visibility: hidden;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {
+                background: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                background: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+    </style>
+
+
+<script>
+    function changePathAndLoadScript() {
+        // Get the selected value
+        var selectedValue = document.getElementById("gameMode").value;
+
+        // Change the path based on the selected value
+        window.location.href = '/' + selectedValue + '.html';
+
+        // Load the corresponding script
+        loadScript(selectedValue);
+    }
+</script>
+<script type="text/javascript" src="versusRandomComp.js"></script>
+
+
+</body>
+
+</html>
